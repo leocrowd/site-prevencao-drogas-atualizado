@@ -1,0 +1,1987 @@
+=
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Site educativo sobre prevenção ao uso de drogas ilícitas entre adolescentes, seus riscos, impactos e formas de buscar ajuda.">
+  <meta name="theme-color" content="#34205c">
+  <title>Prevenção ao uso de drogas ilícitas</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+    :root {
+      --purple-950: #2f1d55;
+      --purple-900: #38205f;
+      --purple-700: #70429c;
+      --purple-500: #9163bd;
+      --purple-300: #cbb1dc;
+      --purple-150: #eadcf0;
+      --pink-100: #f6e9ef;
+      --cream: #fcf5f1;
+      --white: #fffdfc;
+      --text: #2f2940;
+      --muted: #675e70;
+      --line: rgba(72, 38, 103, .15);
+      --shadow: 0 20px 50px rgba(48, 29, 75, .10);
+      --radius: 24px;
+      --container: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background: var(--cream);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .container {
+      width: min(var(--container), calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .section {
+      padding: 96px 0;
+    }
+
+    .section-soft {
+      background: var(--pink-100);
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 100;
+      transform: translateY(-150%);
+      background: var(--purple-950);
+      color: white;
+      padding: 10px 14px;
+      border-radius: 10px;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(252, 245, 241, .88);
+      border-bottom: 1px solid rgba(72, 38, 103, .08);
+      backdrop-filter: blur(16px);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--purple-950);
+      font-size: .76rem;
+      line-height: 1.05;
+      letter-spacing: .03em;
+    }
+
+    .brand strong {
+      font-size: .95rem;
+    }
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      background: var(--purple-900);
+      color: white;
+      font-size: 1.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-size: .88rem;
+      font-weight: 600;
+      color: #4c405c;
+    }
+
+    .nav-links a:hover {
+      color: var(--purple-700);
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 0;
+      background: transparent;
+      padding: 8px;
+    }
+
+    .menu-toggle span:not(.sr-only) {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--purple-950);
+      margin: 5px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 650px;
+      display: grid;
+      align-items: center;
+      background: var(--cream);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .7;
+      background:
+        radial-gradient(circle at 82% 25%, rgba(203, 177, 220, .45) 0 7%, transparent 7.2%),
+        radial-gradient(circle at 8% 82%, rgba(145, 99, 189, .18) 0 8%, transparent 8.2%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      align-items: center;
+      gap: 60px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-copy {
+      padding: 80px 0;
+      max-width: 700px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--purple-700);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: .72rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .hero h1,
+    h2,
+    h3,
+    h4 {
+      font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+    }
+
+    .hero h1 {
+      margin: 0;
+      color: var(--purple-950);
+      font-size: clamp(3.2rem, 7vw, 6.4rem);
+      line-height: .88;
+      letter-spacing: -.035em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 em {
+      color: var(--purple-500);
+      font-style: normal;
+      text-transform: uppercase;
+      font-size: .68em;
+      letter-spacing: .015em;
+    }
+
+    .hero-copy>p {
+      max-width: 600px;
+      margin: 28px 0 26px;
+      font-size: 1.05rem;
+      color: var(--muted);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: .88rem;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+      cursor: pointer;
+      border: 0;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--purple-900);
+      color: white;
+      box-shadow: 0 12px 24px rgba(56, 32, 95, .18);
+    }
+
+    .btn-ghost {
+      border: 1px solid var(--line);
+      color: var(--purple-900);
+      background: rgba(255, 255, 255, .35);
+    }
+
+    .hero-art {
+      min-height: 440px;
+      position: relative;
+    }
+
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(.2px);
+    }
+
+    .blob-one {
+      width: 360px;
+      height: 360px;
+      background: var(--purple-150);
+      right: 40px;
+      top: 35px;
+      border-radius: 46% 54% 59% 41% / 45% 40% 60% 55%;
+      transform: rotate(16deg);
+    }
+
+    .blob-two {
+      width: 180px;
+      height: 180px;
+      background: var(--purple-300);
+      right: 10px;
+      bottom: 35px;
+      border-radius: 55% 45% 40% 60%;
+    }
+
+    .hero-card {
+      position: absolute;
+      left: 20px;
+      top: 145px;
+      width: min(410px, 90%);
+      padding: 28px;
+      border-radius: var(--radius);
+      background: rgba(255, 253, 252, .92);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255, 255, 255, .8);
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+
+    .hero-card-icon {
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      width: 46px;
+      height: 46px;
+      border-radius: 15px;
+      background: var(--purple-900);
+      color: white;
+      font-family: "Barlow Condensed";
+      font-size: 1.8rem;
+    }
+
+    .hero-card strong {
+      display: block;
+      color: var(--purple-950);
+      font-family: "Barlow Condensed";
+      font-size: 1.55rem;
+      text-transform: uppercase;
+    }
+
+    .hero-card p {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .dotted-pattern {
+      position: absolute;
+      width: 90px;
+      height: 90px;
+      right: 15px;
+      top: 5px;
+      background-image: radial-gradient(var(--purple-700) 2px, transparent 2px);
+      background-size: 18px 18px;
+      opacity: .7;
+    }
+
+    .section-heading {
+      max-width: 720px;
+      margin-bottom: 44px;
+    }
+
+    .section-heading h2,
+    .prevention-heading h2 {
+      margin: 0;
+      color: var(--purple-950);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      line-height: .95;
+      text-transform: uppercase;
+      letter-spacing: -.02em;
+    }
+
+    .section-heading p,
+    .prevention-heading p {
+      color: var(--muted);
+      max-width: 680px;
+      margin: 18px 0 0;
+    }
+
+    .stage-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .stage-card {
+      position: relative;
+      padding: 30px;
+      min-height: 245px;
+      border-radius: var(--radius);
+      background: white;
+      border: 1px solid var(--line);
+      box-shadow: 0 8px 25px rgba(48, 29, 75, .04);
+    }
+
+    .stage-card.featured {
+      background: var(--purple-900);
+      color: white;
+      border-color: transparent;
+    }
+
+    .stage-card.featured h3,
+    .stage-card.featured p {
+      color: white;
+    }
+
+    .stage-number,
+    .impact-number {
+      display: inline-flex;
+      font-family: "Barlow Condensed";
+      font-weight: 800;
+      color: var(--purple-500);
+      font-size: 1.1rem;
+      letter-spacing: .08em;
+    }
+
+    .stage-card h3 {
+      margin: 18px 0 8px;
+      font-size: 2rem;
+      text-transform: uppercase;
+      color: var(--purple-950);
+    }
+
+    .stage-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .warning {
+      margin: 34px auto 0;
+      max-width: 880px;
+      padding: 20px 24px;
+      border-radius: 18px;
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      background: var(--purple-700);
+      color: white;
+    }
+
+    .warning-mark {
+      display: grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      border: 1px solid rgba(255, 255, 255, .4);
+      border-radius: 50%;
+      font-weight: 800;
+      flex: 0 0 auto;
+    }
+
+    .warning p {
+      margin: 0;
+      font-family: "Barlow Condensed";
+      font-size: 1.25rem;
+      text-transform: uppercase;
+      line-height: 1.15;
+    }
+
+    .drug-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .drug-tab {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, .55);
+      color: var(--purple-950);
+      border-radius: 999px;
+      padding: 11px 19px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: .88rem;
+    }
+
+    .drug-tab.active,
+    .drug-tab:hover {
+      background: var(--purple-900);
+      color: white;
+      border-color: var(--purple-900);
+    }
+
+    .drug-panel {
+      background: white;
+      border-radius: var(--radius);
+      padding: 36px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(72, 38, 103, .08);
+    }
+
+    .drug-title {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
+    .drug-icon {
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      width: 58px;
+      height: 58px;
+      border-radius: 18px;
+      background: var(--purple-150);
+      color: var(--purple-900);
+      font-family: "Barlow Condensed";
+      font-size: 1.25rem;
+      font-weight: 800;
+    }
+
+    .drug-title h3 {
+      margin: 0;
+      font-size: 2.4rem;
+      text-transform: uppercase;
+      color: var(--purple-950);
+    }
+
+    .drug-title p {
+      margin: 2px 0 0;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .effect-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .effect-card {
+      padding: 24px;
+      border-radius: 18px;
+      background: var(--pink-100);
+    }
+
+    .effect-card h4 {
+      margin: 0 0 12px;
+      color: var(--purple-900);
+      text-transform: uppercase;
+      font-size: 1.45rem;
+    }
+
+    .effect-card ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .effect-card li {
+      position: relative;
+      padding: 8px 0 8px 20px;
+      border-top: 1px dashed rgba(72, 38, 103, .18);
+      font-size: .86rem;
+      color: var(--text);
+    }
+
+    .effect-card li:first-child {
+      border-top: 0;
+    }
+
+    .effect-card li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 16px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--purple-500);
+    }
+
+    .factors-grid {
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .factors-copy h2 {
+      margin: 0;
+      font: 800 clamp(2.5rem, 5vw, 4rem)/.95 "Barlow Condensed";
+      color: var(--purple-950);
+      text-transform: uppercase;
+    }
+
+    .factors-copy>p {
+      color: var(--muted);
+      max-width: 600px;
+    }
+
+    .factor-list {
+      margin-top: 30px;
+    }
+
+    .factor-list>div {
+      display: grid;
+      grid-template-columns: 45px 1fr;
+      align-items: center;
+      gap: 12px;
+      padding: 13px 0;
+      border-bottom: 1px dashed var(--line);
+    }
+
+    .factor-list span {
+      font: 700 1rem "Barlow Condensed";
+      color: var(--purple-500);
+    }
+
+    .factor-list p {
+      margin: 0;
+      font-size: .9rem;
+    }
+
+    .quote-card {
+      margin-top: 80px;
+      padding: 44px;
+      min-height: 350px;
+      position: relative;
+      border-radius: 30px 10px 30px 10px;
+      background: var(--purple-700);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      box-shadow: var(--shadow);
+    }
+
+    .quote-card p {
+      font: 500 clamp(1.5rem, 3vw, 2.15rem)/1.15 "Barlow Condensed";
+      text-align: center;
+      margin: 0;
+    }
+
+    .quote-mark {
+      position: absolute;
+      top: 18px;
+      left: 28px;
+      font: 800 5rem/1 "Barlow Condensed";
+      opacity: .45;
+    }
+
+    .quote-end {
+      left: auto;
+      top: auto;
+      right: 28px;
+      bottom: 4px;
+    }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .impact-card {
+      padding: 30px;
+      min-height: 260px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .impact-card h3 {
+      margin: 25px 0 8px;
+      font-size: 2rem;
+      color: var(--purple-950);
+      text-transform: uppercase;
+    }
+
+    .impact-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .prevention {
+      background: var(--purple-950);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .prevention::after {
+      content: "";
+      position: absolute;
+      width: 450px;
+      height: 450px;
+      right: -180px;
+      top: -180px;
+      border: 1px solid rgba(255, 255, 255, .12);
+      border-radius: 50%;
+      box-shadow: 0 0 0 55px rgba(255, 255, 255, .03), 0 0 0 110px rgba(255, 255, 255, .02);
+    }
+
+    .prevention-heading {
+      max-width: 720px;
+      margin-bottom: 42px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .prevention-heading .eyebrow {
+      color: var(--purple-300);
+    }
+
+    .prevention-heading h2 {
+      color: white;
+    }
+
+    .prevention-heading p {
+      color: rgba(255, 255, 255, .72);
+    }
+
+    .prevention-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .prevention-card {
+      padding: 24px;
+      min-height: 250px;
+      border: 1px solid rgba(255, 255, 255, .13);
+      border-radius: 20px;
+      background: rgba(255, 255, 255, .05);
+    }
+
+    .prevention-card span {
+      color: var(--purple-300);
+      font: 800 1.1rem "Barlow Condensed";
+    }
+
+    .prevention-card h3 {
+      margin: 30px 0 10px;
+      font-size: 1.7rem;
+      line-height: .95;
+      text-transform: uppercase;
+    }
+
+    .prevention-card p {
+      margin: 0;
+      color: rgba(255, 255, 255, .7);
+      font-size: .83rem;
+      line-height: 1.55;
+    }
+
+    .help {
+      background: var(--cream);
+    }
+
+    .help-box {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 40px;
+      align-items: center;
+      padding: 55px;
+      border-radius: 32px;
+      background: var(--purple-150);
+    }
+
+    .help-box h2 {
+      margin: 0;
+      color: var(--purple-950);
+      font: 800 clamp(2.5rem, 5vw, 4rem)/.92 "Barlow Condensed";
+      text-transform: uppercase;
+    }
+
+    .help-box p {
+      color: var(--muted);
+      max-width: 680px;
+    }
+
+    .help-highlight {
+      min-height: 220px;
+      padding: 30px;
+      border-radius: 24px;
+      background: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      box-shadow: 0 10px 30px rgba(48, 29, 75, .08);
+      color: var(--purple-950);
+    }
+
+    .big-plus {
+      font: 800 3.5rem/1 "Barlow Condensed";
+      color: var(--purple-500);
+    }
+
+    .help-highlight strong {
+      font: 700 1.25rem/1.25 "Barlow Condensed";
+      text-transform: uppercase;
+    }
+
+    /* Estilos da Seção de Comentários */
+    .comments-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    .comments-form-card {
+      background: white;
+      padding: 32px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      font-size: .9rem;
+      color: var(--purple-950);
+      margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 12px 16px;
+      font-family: inherit;
+      font-size: .95rem;
+      color: var(--text);
+      background: var(--cream);
+      transition: border-color .2s ease, box-shadow .2s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--purple-700);
+      background: white;
+      box-shadow: 0 0 0 3px rgba(112, 66, 156, 0.15);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    .comments-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .comment-card {
+      background: white;
+      padding: 20px 24px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      box-shadow: 0 4px 15px rgba(48, 29, 75, .03);
+    }
+
+    .comment-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .comment-author {
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--purple-950);
+      text-transform: uppercase;
+    }
+
+    .comment-date {
+      font-size: .78rem;
+      color: var(--muted);
+    }
+
+    .comment-text {
+      margin: 0;
+      font-size: .92rem;
+      color: var(--text);
+    }
+
+    .source-list {
+      margin: 0;
+      padding-left: 25px;
+      max-width: 900px;
+    }
+
+    .source-list li {
+      padding: 12px 0 12px 5px;
+      border-bottom: 1px dashed var(--line);
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .source-list a {
+      color: var(--purple-700);
+      text-underline-offset: 3px;
+    }
+
+    .source-list a:hover {
+      color: var(--purple-950);
+    }
+
+    .footer {
+      background: #25173f;
+      color: rgba(255, 255, 255, .7);
+      padding: 34px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .footer strong {
+      color: white;
+      font-family: "Barlow Condensed";
+      font-size: 1.35rem;
+      text-transform: uppercase;
+    }
+
+    .footer p {
+      margin: 5px 0 0;
+      font-size: .78rem;
+    }
+
+    .back-top {
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: .82rem;
+    }
+
+
+    .drug-definition {
+      margin: 22px 0;
+      padding: 20px 22px;
+      border-radius: 18px;
+      background: var(--pink-100);
+      border: 1px solid var(--line);
+    }
+
+    .drug-definition h4 {
+      margin: 0 0 8px;
+      color: var(--purple-900);
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 1.45rem;
+      text-transform: uppercase;
+    }
+
+    .drug-definition p {
+      margin: 0;
+    }
+
+    .effect-card ul {
+      margin-bottom: 18px;
+    }
+
+    .effect-card li {
+      margin-bottom: 7px;
+    }
+
+    .video-section {
+      background: var(--cream);
+    }
+
+    .video-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: #1e1730;
+      aspect-ratio: 16 / 9;
+    }
+
+    .video-wrap iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+
+    .video-note {
+      max-width: 760px;
+      margin: 18px auto 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: .82rem;
+    }
+
+    .comment-help {
+      color: var(--muted);
+      font-size: .78rem;
+      margin-top: 8px;
+    }
+
+    .comment-status {
+      min-height: 22px;
+      margin-top: 10px;
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--purple-700);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+
+      * {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .hero-copy {
+        padding: 72px 0 20px;
+      }
+
+      .hero-art {
+        min-height: 330px;
+      }
+
+      .hero-card {
+        top: 40px;
+        left: 10%;
+      }
+
+      .blob-one {
+        width: 300px;
+        height: 300px;
+        right: 12%;
+      }
+
+      .blob-two {
+        right: 5%;
+        bottom: 15px;
+        width: 140px;
+        height: 140px;
+      }
+
+      .stage-grid,
+      .impact-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .stage-card.featured {
+        grid-column: 1 / -1;
+        min-height: auto;
+      }
+
+      .factors-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .quote-card {
+        margin-top: 0;
+        min-height: 270px;
+      }
+
+      .prevention-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .prevention-card:last-child {
+        grid-column: 1 / -1;
+      }
+
+      .comments-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .container {
+        width: min(var(--container), calc(100% - 28px));
+      }
+
+      .section {
+        padding: 70px 0;
+      }
+
+      .nav {
+        min-height: 68px;
+      }
+
+      .menu-toggle {
+        display: block;
+        z-index: 3;
+      }
+
+      .nav-links {
+        position: fixed;
+        inset: 68px 0 0;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 20px 20px 30px;
+        background: var(--cream);
+        height: fit-content;
+        transform: translateX(100%);
+        transition: transform .25s ease;
+      }
+
+      .nav-links.open {
+        transform: translateX(0);
+      }
+
+      .nav-links a {
+        padding: 16px;
+        border-bottom: 1px solid var(--line);
+        font-size: 1rem;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-copy {
+        padding: 58px 0 0;
+      }
+
+      .hero h1 {
+        font-size: clamp(3rem, 17vw, 5rem);
+      }
+
+      .hero-copy>p {
+        font-size: .95rem;
+      }
+
+      .hero-art {
+        min-height: 270px;
+      }
+
+      .hero-card {
+        left: 2%;
+        top: 35px;
+        width: 94%;
+        padding: 22px;
+      }
+
+      .blob-one {
+        width: 260px;
+        height: 260px;
+        right: 2%;
+      }
+
+      .dotted-pattern {
+        display: none;
+      }
+
+      .stage-grid,
+      .impact-grid,
+      .effect-grid,
+      .help-box {
+        grid-template-columns: 1fr;
+      }
+
+      .stage-card.featured {
+        grid-column: auto;
+      }
+
+      .stage-card {
+        min-height: auto;
+      }
+
+      .drug-panel {
+        padding: 23px;
+      }
+
+      .drug-title {
+        align-items: flex-start;
+      }
+
+      .drug-title h3 {
+        font-size: 2rem;
+      }
+
+      .factors-grid {
+        gap: 25px;
+      }
+
+      .quote-card {
+        padding: 38px 25px;
+      }
+
+      .prevention-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .prevention-card:last-child {
+        grid-column: auto;
+      }
+
+      .help-box {
+        padding: 30px;
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .drug-tabs {
+        gap: 7px;
+      }
+
+      .drug-tab {
+        padding: 9px 14px;
+        font-size: .8rem;
+      }
+
+      .warning {
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header" id="inicio">
+    <nav class="nav container" aria-label="Navegação principal">
+      <a class="brand" href="#inicio" aria-label="Prevenção ao uso de drogas - início">
+        <span class="brand-mark">+</span>
+        <span>Prevenção<br><strong>e informação</strong></span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span><span></span>
+        <span class="sr-only">Abrir menu</span>
+      </button>
+
+      <div class="nav-links" id="menu">
+        <a href="#entenda">Entenda</a>
+        <a href="#drogas">Drogas</a>
+        <a href="#impactos">Impactos</a>
+        <a href="#prevencao">Prevenção</a>
+        <a href="#ajuda">Ajuda</a>
+        <a href="#video">Vídeo</a>
+        <a href="#comentarios">Comentários</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero">
+      <div class="hero-lines" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">Informação também é prevenção</span>
+          <h1>Prevenção do uso de<br><em>drogas ilícitas</em><br>entre adolescentes</h1>
+          <p>
+            Conhecer os riscos, entender os fatores que influenciam nossas escolhas
+            e saber onde buscar apoio pode fazer diferença.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#entenda">Quero entender</a>
+            <a class="btn btn-ghost" href="#prevencao">Como me proteger?</a>
+          </div>
+        </div>
+
+        <div class="hero-art reveal" aria-hidden="true">
+          <div class="blob blob-one"></div>
+          <div class="blob blob-two"></div>
+          <div class="hero-card">
+            <span class="hero-card-icon">?</span>
+            <div>
+              <strong>Você sabia?</strong>
+              <p>A dependência química envolve alterações no funcionamento do cérebro e perda de controle sobre o uso.
+              </p>
+            </div>
+          </div>
+          <div class="dotted-pattern"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro section" id="entenda">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Antes de tudo</span>
+          <h2>O que é dependência química?</h2>
+          <p>
+            Não é apenas uma vontade de consumir uma substância. A pessoa pode
+            apresentar dificuldade para parar mesmo quando o consumo começa a trazer problemas.
+          </p>
+        </div>
+
+        <div class="stage-grid">
+          <article class="stage-card reveal">
+            <span class="stage-number">01</span>
+            <div>
+              <h3>Uso</h3>
+              <p>É quando a pessoa utiliza a droga, de forma rotineira ou não, inclusive ao experimentá-la, mantendo o
+                controle sobre o consumo.</p>
+            </div>
+          </article>
+          <article class="stage-card reveal">
+            <span class="stage-number">02</span>
+            <div>
+              <h3>Abuso</h3>
+              <p>O uso passa a ser mais frequente e começam a aparecer consequências na vida da pessoa, como alterações
+                de comportamento e problemas nas relações sociais.</p>
+            </div>
+          </article>
+          <article class="stage-card featured reveal">
+            <span class="stage-number">03</span>
+            <div>
+              <h3>Dependência</h3>
+              <p>A pessoa perde o controle sobre o uso, sente dificuldade ou não consegue parar. O uso pode se tornar
+                uma compulsão e os problemas tendem a se agravar.</p>
+            </div>
+          </article>
+        </div>
+
+
+      </div>
+    </section>
+
+    <section class="drugs section section-soft" id="drogas">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Conheça os riscos</span>
+          <h2>Algumas drogas e seus efeitos</h2>
+          <p>Informação não é incentivo. Entender os efeitos ajuda a reconhecer riscos e fazer escolhas mais
+            conscientes.</p>
+        </div>
+
+        <div class="drug-tabs" role="tablist" aria-label="Escolha uma substância">
+          <button class="drug-tab active" role="tab" aria-selected="true" aria-controls="drug-cocaina"
+            data-drug="cocaina">Cocaína</button>
+          <button class="drug-tab" role="tab" aria-selected="false" aria-controls="drug-ecstasy"
+            data-drug="ecstasy">Ecstasy</button>
+          <button class="drug-tab" role="tab" aria-selected="false" aria-controls="drug-maconha"
+            data-drug="maconha">Maconha</button>
+          <button class="drug-tab" role="tab" aria-selected="false" aria-controls="drug-crack"
+            data-drug="crack">Crack</button>
+        </div>
+
+        <div class="drug-panels">
+          <article class="drug-panel active reveal" id="drug-cocaina" role="tabpanel">
+            <div class="drug-title"><span class="drug-icon">01</span>
+              <div>
+                <h3>Cocaína</h3>
+                <p>Substância estimulante do sistema nervoso central, extraída da planta da coca. Pode causar euforia,
+                  prazer e aumento do estado de alerta, além de apresentar alto potencial de dependência.</p>
+              </div>
+            </div>
+            <div class="drug-definition">
+              <h4>O que é?</h4>
+              <p>A cocaína é uma substância estimulante do sistema nervoso central, extraída da planta da coca. Pode
+                causar euforia, prazer e aumento do estado de alerta, além de apresentar alto potencial de dependência.
+              </p>
+            </div>
+            <div class="effect-grid">
+              <div class="effect-card">
+                <h4>Saúde física</h4>
+                <ul>
+                  <li>Aumento da frequência cardíaca e da pressão arterial;</li>
+                  <li>Aumento da temperatura corporal e da respiração;</li>
+                  <li>Pupilas dilatadas;</li>
+                  <li>Suor excessivo;</li>
+                  <li>Tremores nas mãos e espasmos musculares;</li>
+                  <li>Hiperatividade motora;</li>
+                  <li>Fadiga;</li>
+                  <li>Diminuição do apetite;</li>
+                  <li>Perda de peso.</li>
+                </ul>
+                <p>Pode causar lesões cerebrais e problemas no coração e nos vasos sanguíneos. O uso frequente pode
+                  danificar dentes e gengivas, enfraquecendo o esmalte. Em casos de overdose, pode provocar arritmia,
+                  infarto, convulsões, febre alta e até levar à morte.</p>
+              </div>
+              <div class="effect-card">
+                <h4>Saúde psicológica</h4>
+                <ul>
+                  <li>Irritabilidade;</li>
+                  <li>Mudanças repentinas de humor;</li>
+                  <li>Impulsividade;</li>
+                  <li>Ansiedade;</li>
+                  <li>Depressão;</li>
+                  <li>Insônia;</li>
+                  <li>Agressividade;</li>
+                  <li>Delírios;</li>
+                  <li>Paranoia;</li>
+                  <li>Alucinações;</li>
+                  <li>Ataques de pânico.</li>
+                </ul>
+                <p>O uso contínuo pode prejudicar a memória, a concentração e o raciocínio, além de causar dependência.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article class="drug-panel" id="drug-ecstasy" role="tabpanel" hidden>
+            <div class="drug-title"><span class="drug-icon">02</span>
+              <div>
+                <h3>Ecstasy</h3>
+                <p>Droga sintética produzida em laboratório, geralmente consumida em comprimidos. Seu principal
+                  componente é o MDMA.</p>
+              </div>
+            </div>
+            <div class="drug-definition">
+              <h4>O que é?</h4>
+              <p>O ecstasy é uma droga sintética produzida em laboratório, geralmente consumida em comprimidos. Seu
+                principal componente é o MDMA, que pode causar euforia, bem-estar e maior sociabilidade.</p>
+            </div>
+            <div class="effect-grid">
+              <div class="effect-card">
+                <h4>Saúde física</h4>
+                <ul>
+                  <li>Boca seca;</li>
+                  <li>Náusea;</li>
+                  <li>Suor excessivo;</li>
+                  <li>Aumento da frequência cardíaca;</li>
+                  <li>Aumento da pressão arterial;</li>
+                  <li>Aumento da temperatura corporal;</li>
+                  <li>Dor de cabeça;</li>
+                  <li>Visão turva;</li>
+                  <li>Fadiga;</li>
+                  <li>Insônia;</li>
+                  <li>Manchas roxas na pele;</li>
+                  <li>Diminuição do apetite;</li>
+                  <li>Tensão e ranger dos dentes.</li>
+                </ul>
+                <p>O aumento da temperatura pode causar desidratação e danos aos rins, músculos e outros órgãos. Também
+                  pode causar problemas no coração e no fígado.</p>
+              </div>
+              <div class="effect-card">
+                <h4>Saúde psicológica</h4>
+                <ul>
+                  <li>Ansiedade;</li>
+                  <li>Ataques de pânico;</li>
+                  <li>Depressão;</li>
+                  <li>Agitação;</li>
+                  <li>Alterações visuais;</li>
+                  <li>Alucinações;</li>
+                  <li>Confusão;</li>
+                  <li>Dificuldade de concentração;</li>
+                  <li>Alterações no julgamento e na tomada de decisões.</li>
+                </ul>
+                <p>O uso frequente pode afetar a memória, a concentração e o humor, além de causar dependência.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="drug-panel" id="drug-maconha" role="tabpanel" hidden>
+            <div class="drug-title"><span class="drug-icon">03</span>
+              <div>
+                <h3>Maconha</h3>
+                <p>Droga obtida da planta Cannabis sativa. Possui substâncias psicoativas, principalmente o THC.</p>
+              </div>
+            </div>
+            <div class="drug-definition">
+              <h4>O que é?</h4>
+              <p>A maconha é uma droga obtida da planta Cannabis sativa. Possui substâncias psicoativas, principalmente
+                o THC, que podem alterar o comportamento, a percepção e a forma de pensar.</p>
+            </div>
+            <div class="effect-grid">
+              <div class="effect-card">
+                <h4>Saúde física</h4>
+                <ul>
+                  <li>Diminuição da capacidade motora e dos reflexos;</li>
+                  <li>Aumento dos batimentos cardíacos;</li>
+                  <li>Olhos vermelhos e boca seca;</li>
+                  <li>Efeitos negativos no sistema respiratório, principalmente quando é fumada;</li>
+                  <li>Dificuldade de coordenação, aumentando o risco de acidentes;</li>
+                  <li>Em casos de uso crônico, pode contribuir para problemas no sistema respiratório;</li>
+                  <li>Nos homens, pode causar alterações nos níveis de testosterona;</li>
+                  <li>Nas mulheres, pode afetar a ovulação.</li>
+                </ul>
+                <p>O uso constante também pode causar dificuldades de atenção, memória e aprendizagem.</p>
+              </div>
+              <div class="effect-card">
+                <h4>Saúde psicológica</h4>
+                <ul>
+                  <li>Euforia;</li>
+                  <li>Sensação de relaxamento;</li>
+                  <li>Ansiedade;</li>
+                  <li>Crises de pânico;</li>
+                  <li>Paranoia;</li>
+                  <li>Diminuição da atenção e da memória;</li>
+                  <li>Dificuldade de concentração e aprendizagem;</li>
+                  <li>Aumento da probabilidade de sintomas psicóticos;</li>
+                  <li>Delírios e alucinações em alguns casos.</li>
+                </ul>
+                <p>O uso frequente pode aumentar problemas relacionados à saúde mental e também causar dependência.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="drug-panel" id="drug-crack" role="tabpanel" hidden>
+            <div class="drug-title"><span class="drug-icon">04</span>
+              <div>
+                <h3>Crack</h3>
+                <p>Forma cristalizada da cocaína, geralmente consumida pela fumaça, com efeitos rápidos e alto potencial
+                  de dependência.</p>
+              </div>
+            </div>
+            <div class="drug-definition">
+              <h4>O que é?</h4>
+              <p>O crack é uma forma cristalizada da cocaína, uma droga ilícita geralmente consumida pela fumaça. Seus
+                efeitos são rápidos e possui alto potencial de causar dependência.</p>
+            </div>
+            <div class="effect-grid">
+              <div class="effect-card">
+                <h4>Saúde física</h4>
+                <ul>
+                  <li>Falta de apetite;</li>
+                  <li>Aumento dos batimentos cardíacos e da pressão arterial;</li>
+                  <li>Tremores;</li>
+                  <li>Pupilas dilatadas;</li>
+                  <li>Suor intenso;</li>
+                  <li>Problemas cardíacos, como infarto;</li>
+                  <li>Problemas pulmonares;</li>
+                  <li>Tosse e falta de ar;</li>
+                  <li>Dores fortes no peito;</li>
+                  <li>Lesões no nariz, olhos, face, lábios, boca, faringe e laringe.</li>
+                </ul>
+                <p>O uso frequente pode causar perda de peso, desnutrição e problemas nos pulmões. Também pode
+                  prejudicar a memória, o raciocínio e a concentração.</p>
+              </div>
+              <div class="effect-card">
+                <h4>Saúde psicológica</h4>
+                <ul>
+                  <li>Psicose;</li>
+                  <li>Paranoia;</li>
+                  <li>Alucinações;</li>
+                  <li>Delírios;</li>
+                  <li>Alterações de humor;</li>
+                  <li>Irritabilidade;</li>
+                  <li>Dificuldade de concentração;</li>
+                  <li>Dificuldade de raciocínio;</li>
+                  <li>Problemas de memória.</li>
+                </ul>
+                <p>O uso frequente pode prejudicar a memória, o raciocínio e a concentração, além de apresentar alto
+                  potencial de dependência.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section class="impacts section section-soft" id="impactos">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Não é só sobre saúde</span>
+          <h2>Impactos na vida</h2>
+          <p>As drogas podem afetar muito mais do que a sua saúde. O uso também pode atrapalhar seus estudos, sua
+            relação com a família, suas amizades e sua rotina.</p>
+          <p>Por isso, cuidar das suas escolhas e estar perto de pessoas que fazem bem para você também faz parte da
+            prevenção.</p>
+        </div>
+        <div class="impact-grid">
+          <article class="impact-card reveal"><span class="impact-number">01</span>
+            <h3>📚 Estudos e escola</h3>
+            <p>O uso de drogas pode dificultar a concentração, a atenção e a memória, deixando mais difícil acompanhar
+              as aulas, fazer atividades e manter uma rotina de estudos. Isso pode acabar prejudicando seu desempenho e
+              seus planos para o futuro.</p>
+            <p>A escola também pode ser um espaço para buscar informação, tirar dúvidas e conversar sobre drogas. Quanto
+              mais informação você tiver, mais preparado estará para fazer escolhas conscientes.</p>
+          </article>
+          <article class="impact-card reveal"><span class="impact-number">02</span>
+            <h3>👨‍👩‍👧 Família</h3>
+            <p>As drogas podem causar brigas, desentendimentos, perda de confiança e afastamento entre os familiares.
+              Quando existe dificuldade para conversar, os problemas podem ficar ainda maiores.</p>
+            <p>Ter uma relação de diálogo, confiança e apoio com a família pode ajudar na prevenção. Se estiver passando
+              por alguma dificuldade, tiver dúvidas ou não souber como lidar com uma situação, conversar com alguém de
+              confiança pode ajudar.</p>
+          </article>
+          <article class="impact-card reveal"><span class="impact-number">03</span>
+            <h3>🧑‍🤝‍🧑 Amizades e relações</h3>
+            <p>As pessoas com quem convivemos podem influenciar nossas escolhas e nossos comportamentos. Por isso, é
+              importante estar perto de pessoas que respeitem seus limites, suas escolhas e que façam você se sentir
+              bem.</p>
+            <p>Você não precisa fazer algo apenas para se encaixar em um grupo. Ter amizades saudáveis, nas quais existe
+              respeito, apoio e confiança, pode ajudar você a fazer escolhas melhores e a enfrentar momentos difíceis.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="factors section">
+      <div class="container factors-grid">
+        <div class="factors-copy reveal">
+          <span class="eyebrow">O ambiente importa</span>
+          <h2>Fatores que podem influenciar</h2>
+          <p>
+            As escolhas não acontecem isoladamente. Situações emocionais,
+            familiares e sociais podem influenciar a forma como uma pessoa lida com dificuldades.
+          </p>
+          <div class="factor-list">
+            <div><span>01</span>
+              <p>Influência de amigos e do ambiente social.</p>
+            </div>
+            <div><span>02</span>
+              <p>Curiosidade e busca por novas experiências.</p>
+            </div>
+            <div><span>03</span>
+              <p>Tentativa de fugir de problemas ou aliviar dores emocionais.</p>
+            </div>
+            <div><span>04</span>
+              <p>Problemas familiares.</p>
+            </div>
+            <div><span>05</span>
+              <p>Rompimento de relacionamentos importantes.</p>
+            </div>
+            <div><span>06</span>
+              <p>Dificuldade de lidar com a perda de um vínculo.</p>
+            </div>
+            <div><span>07</span>
+              <p>Falta de informação sobre os riscos.</p>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+
+    <section class="prevention section" id="prevencao">
+      <div class="container">
+        <div class="prevention-heading reveal">
+          <span class="eyebrow">Prevenção: como se proteger?</span>
+          <h2>Cuide das suas escolhas.</h2>
+          <p>Você não precisa enfrentar momentos difíceis sozinho.</p>
+        </div>
+
+        <div class="prevention-grid">
+          <article class="prevention-card reveal">
+            <span>01</span>
+            <h3>Procure apoio</h3>
+            <p>Busque apoio psicológico para lidar com problemas e dificuldades emocionais.</p>
+          </article>
+          <article class="prevention-card reveal">
+            <span>02</span>
+            <h3>Converse</h3>
+            <p>Fale com alguém de confiança quando estiver passando por uma situação difícil.</p>
+          </article>
+          <article class="prevention-card reveal">
+            <span>03</span>
+            <h3>Escolha boas companhias</h3>
+            <p>Cerque-se de pessoas que respeitem suas escolhas e contribuam para o seu bem-estar.</p>
+          </article>
+          <article class="prevention-card reveal">
+            <span>04</span>
+            <h3>Encontre alternativas</h3>
+            <p>Pratique esportes, ouça música, saia, descanse ou desenvolva novos hobbies.</p>
+          </article>
+          <article class="prevention-card reveal">
+            <span>05</span>
+            <h3>Informe-se</h3>
+            <p>Conheça os riscos das drogas e não se deixe levar por informações falsas ou pela ideia de que “não vai
+              acontecer comigo”.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="help section" id="ajuda">
+      <div class="container help-box reveal">
+        <div>
+          <span class="eyebrow">Quando estiver difícil</span>
+          <h2>Não tenha medo de pedir ajuda.</h2>
+          <p>Existem momentos em que a vida pode ficar mais difícil. Uma separação, um luto, problemas em casa,
+            dificuldades na escola, estresse ou sentimentos como tristeza, ansiedade e depressão podem fazer você
+            procurar uma forma de escapar ou aliviar o que está sentindo.</p>
+          <p>Nessas situações, usar drogas não resolve o problema e pode trazer ainda mais dificuldades. Em vez de usar
+            uma droga para tentar esquecer, descontar ou aliviar o que está sentindo, procure ajuda e encontre formas
+            mais saudáveis de lidar com esses momentos.</p>
+          <p>Aprenda a lidar com o estresse e os problemas do dia a dia de maneiras que façam bem para você. Conversar
+            com alguém de confiança, praticar uma atividade física, ter momentos de lazer, descansar, fazer algo que
+            você gosta e buscar apoio quando precisar são algumas formas de cuidar de si.</p>
+          <p>E, quando estiver difícil demais para lidar sozinho, peça ajuda. Você não precisa passar por tudo sozinho,
+            e falar sobre o que está sentindo é um passo importante para encontrar apoio e uma forma melhor de enfrentar
+            o que está acontecendo.</p>
+        </div>
+        <div class="help-highlight"><span class="big-plus">+</span><strong>Você não precisa passar por tudo
+            sozinho.</strong></div>
+      </div>
+    </section>
+
+    <section class="video-section section" id="video">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Para refletir</span>
+          <h2>Assista e continue aprendendo</h2>
+          <p>Confira o vídeo e reflita sobre as escolhas, os riscos e a importância da prevenção.</p>
+        </div>
+        <div class="video-wrap reveal">
+          <iframe src="https://www.youtube.com/embed/HUngLgGRJpo"
+            title="Vídeo educativo sobre prevenção ao uso de drogas" loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+        <p class="video-note">Vídeo incorporado do YouTube. O conteúdo é exibido diretamente pela plataforma.</p>
+      </div>
+    </section>
+
+    <section class="comments section" id="comentarios">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Espaço de reflexão</span>
+          <h2>O que você descobriu ou aprendeu?</h2>
+          <p>Compartilhe uma informação que chamou sua atenção, uma reflexão ou algo novo que você aprendeu com este
+            site.</p>
+        </div>
+        <div class="comments-layout reveal">
+          <div class="comments-form-card">
+            <form id="comment-form">
+              <div class="form-group"><label for="author-name">Seu nome / apelido</label><input type="text"
+                  id="author-name" maxlength="40" placeholder="Ex: Lucas M." required></div>
+              <div class="form-group"><label for="comment-text">Seu comentário</label><textarea id="comment-text"
+                  maxlength="500" placeholder="Comente aqui o que você descobriu ou aprendeu..." required></textarea>
+                <p class="comment-help">Máximo de 500 caracteres.</p>
+              </div>
+              <button type="submit" class="btn btn-primary">Enviar comentário</button>
+              <p class="comment-status" id="comment-status" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+          <div class="comments-list" id="comments-container">
+            <p class="comment-loading">Carregando comentários...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sources section section-soft" id="referencias">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Para saber mais</span>
+          <h2>Referências bibliográficas</h2>
+          <p>Conteúdo elaborado com base nas fontes indicadas para o projeto.</p>
+        </div>
+
+        <ol class="source-list reveal">
+          <li><a href="https://circuitodasaude.com.br/influencia-do-meio-social-no-consumo-de-drogas/" target="_blank"
+              rel="noopener noreferrer">Circuito da Saúde — Influência do meio social no consumo de drogas.</a></li>
+          <li><a href="https://mundoeducacao.uol.com.br/drogas/crack.htm" target="_blank"
+              rel="noopener noreferrer">Mundo Educação — Crack.</a></li>
+          <li><a href="https://www.scielo.br/j/pee/a/mMBhwBjJNhzkhg3hkx3WLXD/?lang=pt" target="_blank"
+              rel="noopener noreferrer">SciELO — artigo científico consultado para o projeto.</a></li>
+          <li><a
+              href="https://www.uniad.org.br/artigos/2-maconha/cannabis-a-droga-mais-consumida-no-mundo-e-os-riscos-ignorados/"
+              target="_blank" rel="noopener noreferrer">UNIAD — Cannabis: a droga mais consumida no mundo e os riscos
+              ignorados.</a></li>
+          <li><a
+              href="https://hospitalsantamonica.com.br/efeitos-a-longo-prazo-do-uso-da-cocaina-os-principais-estragos-ao-corpo-do-usuario/"
+              target="_blank" rel="noopener noreferrer">Hospital Santa Mônica — Efeitos a longo prazo do uso da
+              cocaína.</a></li>
+          <li><a href="https://sanarmed.com/ecstasy-mdma-fisiologia-efeitos-e-riscos-colunistas/" target="_blank"
+              rel="noopener noreferrer">SanarMed — Ecstasy (MDMA): fisiologia, efeitos e riscos.</a></li>
+          <li><a href="https://www.einstein.br/n/vida-saudavel/dependencia-quimica" target="_blank"
+              rel="noopener noreferrer">Hospital Israelita Albert Einstein — Dependência química.</a></li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>Prevenção e informação</strong>
+        <p>Projeto educacional sobre prevenção ao uso de drogas ilícitas entre adolescentes.</p>
+      </div>
+      <a href="#inicio" class="back-top">Voltar ao início ↑</a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    const SUPABASE_URL = 'https://aqakwdteccvhzyhwezev.supabase.co';
+    const SUPABASE_ANON_KEY = 'sb_publishable_11AK_ooHRryP07KaEmcFZQ__FcyJIka';
+    window.supabaseClient = (!SUPABASE_URL.includes('COLE_AQUI') && !SUPABASE_ANON_KEY.includes('COLE_AQUI') && typeof supabase !== 'undefined') ? supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY) : null;
+  </script>
+  <script>
+    (() => {
+      const menuButton = document.querySelector('.menu-toggle');
+      const menu = document.querySelector('#menu');
+
+      if (menuButton && menu) {
+        menuButton.addEventListener('click', () => {
+          const open = menu.classList.toggle('open');
+          document.body.classList.toggle('menu-open', open);
+          menuButton.setAttribute('aria-expanded', String(open));
+        });
+
+        menu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            menu.classList.remove('open');
+            document.body.classList.remove('menu-open');
+            menuButton.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+
+      const tabs = [...document.querySelectorAll('.drug-tab')];
+      const panels = [...document.querySelectorAll('.drug-panel')];
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          const target = tab.dataset.drug;
+
+          tabs.forEach(item => {
+            const selected = item === tab;
+            item.classList.toggle('active', selected);
+            item.setAttribute('aria-selected', String(selected));
+          });
+
+          panels.forEach(panel => {
+            const active = panel.id === `drug-${target}`;
+            panel.classList.toggle('active', active);
+            panel.hidden = !active;
+          });
+        });
+
+        tab.addEventListener('keydown', event => {
+          const index = tabs.indexOf(tab);
+          let nextIndex = null;
+
+          if (event.key === 'ArrowRight') nextIndex = (index + 1) % tabs.length;
+          if (event.key === 'ArrowLeft') nextIndex = (index - 1 + tabs.length) % tabs.length;
+
+          if (nextIndex !== null) {
+            event.preventDefault();
+            tabs[nextIndex].focus();
+            tabs[nextIndex].click();
+          }
+        });
+      });
+
+      const revealItems = document.querySelectorAll('.reveal');
+
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12 });
+
+        revealItems.forEach(item => observer.observe(item));
+      } else {
+        revealItems.forEach(item => item.classList.add('visible'));
+      }
+
+      /* COMENTÁRIOS: banco compartilhado via Supabase */
+      const supabaseConfigured = !!window.supabaseClient;
+
+      const escapeHtml = (str = '') => String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
+      const container = document.getElementById('comments-container');
+      const form = document.getElementById('comment-form');
+      const status = document.getElementById('comment-status');
+
+      const renderComments = (comments) => {
+        if (!container) return;
+        if (!comments.length) {
+          container.innerHTML = '<div class="comment-card"><p class="comment-text">Ainda não há comentários. Seja o primeiro a compartilhar o que aprendeu.</p></div>';
+          return;
+        }
+        container.innerHTML = comments.map(c => {
+          const date = new Date(c.created_at).toLocaleDateString('pt-BR');
+          return `<article class="comment-card"><div class="comment-header"><span class="comment-author">${escapeHtml(c.name)}</span><span class="comment-date">${date}</span></div><p class="comment-text">${escapeHtml(c.text)}</p></article>`;
+        }).join('');
+      };
+
+      const setStatus = (message, error = false) => {
+        if (!status) return;
+        status.textContent = message;
+        status.style.color = error ? '#9b3c55' : '';
+      };
+
+      const loadComments = async () => {
+        if (!supabaseConfigured) {
+          container.innerHTML = '<div class="comment-card"><p class="comment-text">Configure o Supabase no código para ativar os comentários compartilhados.</p></div>';
+          return;
+        }
+        const client = window.supabaseClient;
+        if (!client) { container.innerHTML = '<div class="comment-card"><p class="comment-text">Configure o Supabase no código para ativar os comentários compartilhados.</p></div>'; return; }
+        const { data, error } = await client.from('comments').select('id, name, text, created_at').order('created_at', { ascending: false }).limit(100);
+        if (error) { container.innerHTML = '<div class="comment-card"><p class="comment-text">Não foi possível carregar os comentários agora.</p></div>'; return; }
+        renderComments(data || []);
+      };
+
+      if (form) {
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const name = document.getElementById('author-name').value.trim();
+          const text = document.getElementById('comment-text').value.trim();
+          if (!name || !text) return;
+          if (!supabaseConfigured) { setStatus('Configure o Supabase para publicar comentários.', true); return; }
+          setStatus('Enviando...');
+          const client = window.supabaseClient;
+          if (!client) { setStatus('Configure o Supabase para publicar comentários.', true); return; }
+          const { error } = await client.from('comments').insert({ name, text });
+          if (error) { setStatus('Não foi possível publicar. Tente novamente.', true); return; }
+          form.reset();
+          setStatus('Comentário publicado. Obrigado por participar!');
+          await loadComments();
+        });
+      }
+
+      loadComments();
+    })();
+  </script>
+</body>
+
+</html>
