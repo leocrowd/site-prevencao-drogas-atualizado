@@ -1397,7 +1397,8 @@
           container.innerHTML = '<div class="comment-card"><p class="comment-text">Supabase não configurado corretamente.</p></div>';
           return;
         }
-        const { data, error } = await window.supabaseClient.from('comments').select('id, name, text').order('created_at', { ascending: false }).limit(100);
+        // Removido o .order('created_at') já que a coluna de data foi excluída
+        const { data, error } = await window.supabaseClient.from('comments').select('id, name, text').limit(100);
         if (error) {
           container.innerHTML = '<div class="comment-card"><p class="comment-text">Não foi possível carregar os comentários no momento.</p></div>';
           return;
