@@ -1851,9 +1851,9 @@
           container.innerHTML = '<div class="comment-card"><p class="comment-text">Ainda não há comentários. Seja o primeiro a compartilhar o que aprendeu.</p></div>';
           return;
         }
+        // Removido o campo da data (comment-date) do HTML gerado
         container.innerHTML = comments.map(c => {
-          const date = new Date(c.created_at).toLocaleDateString('pt-BR');
-          return `<article class="comment-card"><div class="comment-header"><span class="comment-author">${escapeHtml(c.name)}</span><span class="comment-date">${date}</span></div><p class="comment-text">${escapeHtml(c.text)}</p></article>`;
+          return `<article class="comment-card"><div class="comment-header"><span class="comment-author">${escapeHtml(c.name)}</span></div><p class="comment-text">${escapeHtml(c.text)}</p></article>`;
         }).join('');
       };
 
@@ -1870,7 +1870,8 @@
         }
         const client = window.supabaseClient;
         if (!client) { container.innerHTML = '<div class="comment-card"><p class="comment-text">Configure o Supabase no código para ativar os comentários compartilhados.</p></div>'; return; }
-        const { data, error } = await client.from('comments').select('id, name, text, created_at').order('created_at', { ascending: false }).limit(100);
+        // Removido o created_at da query para otimizar a busca
+        const { data, error } = await client.from('comments').select('id, name, text').order('created_at', { ascending: false }).limit(100);
         if (error) { container.innerHTML = '<div class="comment-card"><p class="comment-text">Não foi possível carregar os comentários agora.</p></div>'; return; }
         renderComments(data || []);
       };
